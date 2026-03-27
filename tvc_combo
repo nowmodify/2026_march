@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>해시태그 복사</title>
+
+<style>
+
+body{
+text-align:center;
+margin-top:15vh;
+font-family:sans-serif;
+background:#f5f7fb;
+padding:20px;
+}
+
+h2{
+font-size:28px;
+margin-bottom:40px;
+}
+
+button{
+background:linear-gradient(135deg,#8a7dff,#4b5cff);
+color:white;
+border:none;
+padding:22px 40px;
+font-size:20px;
+font-weight:600;
+border-radius:50px;
+cursor:pointer;
+box-shadow:0 12px 30px rgba(0,0,0,0.25);
+transition:all 0.2s ease;
+width:90%;
+max-width:420px;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 14px 30px rgba(0,0,0,0.25);
+}
+
+button:active{
+transform:scale(0.96);
+}
+
+#msg{
+margin-top:30px;
+font-size:18px;
+color:#333;
+font-weight:500;
+}
+
+</style>
+  
+<script>
+
+function copyText() {
+
+const params = new URLSearchParams(window.location.search);
+const type = params.get("type");
+
+const texts = {
+
+m: "#삼성AI가전이신혼을바꾼다 #삼성AI신혼가전 #혼수가전 #BespokeAI콤보 #삼성전자 #삼성전자이벤트 #AI콤보신혼영상공유이벤트_맘홀",
+
+y: "#삼성AI가전이신혼을바꾼다 #삼성AI신혼가전 #혼수가전 #BespokeAI콤보 #삼성전자 #삼성전자이벤트 #AI콤보신혼영상공유이벤트_예카",
+
+d: "#삼성AI가전이신혼을바꾼다 #삼성AI신혼가전 #혼수가전 #BespokeAI콤보 #삼성전자 #삼성전자이벤트 #AI콤보신혼영상공유이벤트_다결",
+
+w: "#삼성AI가전이신혼을바꾼다 #삼성AI신혼가전 #혼수가전 #BespokeAI콤보 #삼성전자 #삼성전자이벤트 #AI콤보신혼영상공유이벤트_웨딩킹",
+
+j: "#삼성AI가전이신혼을바꾼다 #삼성AI신혼가전 #혼수가전 #BespokeAI콤보 #삼성전자 #삼성전자이벤트 #AI콤보신혼영상공유이벤트_제이웨딩"
+
+};
+
+const text = texts[type];
+
+navigator.clipboard.writeText(text);
+
+document.getElementById("msg").innerText = "해시태그가 복사 되었습니다!";
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>삼성 AI 신혼가전 영상 공유 이벤트</h2>
+
+<button onclick="copyText()">
+📋 이벤트 해시태그 복사하기
+</button>
+
+<p id="msg"></p>
+
+</body>
+</html>
